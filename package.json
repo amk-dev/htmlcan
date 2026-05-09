@@ -17,7 +17,8 @@
   "scripts": {
     "dev": "vite",
     "build:cli": "tsup bin/cli.ts --format esm --out-dir dist --clean",
-    "build": "npm run build:cli",
+    "build:web": "vite build",
+    "build": "npm run build:web && npm run build:cli",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
