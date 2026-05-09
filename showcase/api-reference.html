@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #fff; padding: 36px; max-width: 520px; }
+    h1 { font-size: 18px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+    .version { font-size: 12px; color: #999; margin-bottom: 28px; }
+    .endpoint {
+      margin-bottom: 24px; padding: 16px; background: #f9fafb;
+      border-radius: 10px; border: 1px solid #f0f0f0;
+    }
+    .method-url { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .method {
+      font-size: 11px; font-weight: 700; padding: 3px 8px;
+      border-radius: 4px; font-family: 'SF Mono', monospace;
+    }
+    .get { background: #dbeafe; color: #1d4ed8; }
+    .post { background: #d1fae5; color: #059669; }
+    .delete { background: #fee2e2; color: #dc2626; }
+    .url { font-size: 13px; font-family: 'SF Mono', monospace; color: #333; }
+    .desc { font-size: 12px; color: #666; line-height: 1.5; margin-bottom: 10px; }
+    .params { font-size: 11px; }
+    .param-title { font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .param {
+      display: flex; gap: 8px; padding: 6px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .param:last-child { border-bottom: none; }
+    .param-name { font-family: 'SF Mono', monospace; color: #1a1a1a; font-weight: 500; min-width: 80px; }
+    .param-type { color: #8b5cf6; min-width: 50px; }
+    .param-desc { color: #888; flex: 1; }
+    .required { color: #ef4444; font-size: 9px; font-weight: 600; }
+    .response {
+      margin-top: 10px; padding: 10px 12px;
+      background: #1a1a1a; border-radius: 6px;
+      font-family: 'SF Mono', monospace; font-size: 11px;
+      color: #a5f3fc; line-height: 1.6; white-space: pre;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Share API</h1>
+  <p class="version">v1.0 &middot; api.htmlcan.com</p>
+
+  <div class="endpoint">
+    <div class="method-url">
+      <span class="method post">POST</span>
+      <span class="url">/api/share</span>
+    </div>
+    <p class="desc">Create a new shared canvas. Uploads HTML pages and returns a shareable URL.</p>
+    <div class="params">
+      <div class="param-title">Request Body</div>
+      <div class="param">
+        <span class="param-name">pages</span>
+        <span class="param-type">array</span>
+        <span class="param-desc">HTML pages <span class="required">required</span></span>
+      </div>
+      <div class="param">
+        <span class="param-name">  .name</span>
+        <span class="param-type">string</span>
+        <span class="param-desc">Page filename without .html</span>
+      </div>
+      <div class="param">
+        <span class="param-name">  .content</span>
+        <span class="param-type">string</span>
+        <span class="param-desc">HTML content</span>
+      </div>
+    </div>
+    <div class="response">{
+  "id": "abc123",
+  "url": "https://htmlcan.com/s/abc123",
+  "expiresAt": "2026-05-17T00:00:00Z"
+}</div>
+  </div>
+
+  <div class="endpoint">
+    <div class="method-url">
+      <span class="method get">GET</span>
+      <span class="url">/api/share/:id</span>
+    </div>
+    <p class="desc">Retrieve a shared canvas manifest with page list and metadata.</p>
+    <div class="response">{
+  "id": "abc123",
+  "pages": ["dashboard", "login", "settings"],
+  "createdAt": "2026-05-10T12:00:00Z"
+}</div>
+  </div>
+
+  <div class="endpoint">
+    <div class="method-url">
+      <span class="method get">GET</span>
+      <span class="url">/api/share/:id/pages/:name</span>
+    </div>
+    <p class="desc">Fetch individual HTML page content from a shared canvas.</p>
+  </div>
+
+  <div class="endpoint">
+    <div class="method-url">
+      <span class="method delete">DELETE</span>
+      <span class="url">/api/share/:id</span>
+    </div>
+    <p class="desc">Delete a shared canvas. Requires authentication.</p>
+  </div>
+</body>
+</html>

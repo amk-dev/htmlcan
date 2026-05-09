@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #fffbeb; padding: 36px; max-width: 480px; }
+    h1 { font-size: 18px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+    .subtitle { font-size: 12px; color: #999; margin-bottom: 28px; }
+    .idea {
+      background: white; border-radius: 12px; padding: 18px 20px;
+      margin-bottom: 12px; border-left: 3px solid;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      transition: transform 0.15s;
+    }
+    .idea:hover { transform: translateX(4px); }
+    .idea-title { font-size: 14px; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
+    .idea-desc { font-size: 12px; color: #666; line-height: 1.6; }
+    .idea-meta { display: flex; gap: 8px; margin-top: 10px; }
+    .tag {
+      font-size: 10px; font-weight: 500; padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .i1 { border-color: #3b82f6; }
+    .i2 { border-color: #8b5cf6; }
+    .i3 { border-color: #f59e0b; }
+    .i4 { border-color: #10b981; }
+    .i5 { border-color: #ec4899; }
+    .t-effort-low { background: #d1fae5; color: #059669; }
+    .t-effort-med { background: #fef3c7; color: #92400e; }
+    .t-effort-high { background: #fee2e2; color: #dc2626; }
+    .t-impact { background: #ede9fe; color: #7c3aed; }
+    .t-scope { background: #dbeafe; color: #2563eb; }
+    .verdict {
+      margin-top: 20px; padding: 16px 20px;
+      background: white; border-radius: 12px;
+      border: 1px dashed #d4d4d4;
+    }
+    .verdict-title { font-size: 12px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .verdict-text { font-size: 13px; color: #333; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <h1>Feature Brainstorm</h1>
+  <p class="subtitle">htmlcan v2 &middot; Session with Claude</p>
+
+  <div class="idea i1">
+    <div class="idea-title">Collaborative viewing</div>
+    <div class="idea-desc">Multiple users view the same shared canvas in real-time with cursors. Like Figma multiplayer but for HTML pages.</div>
+    <div class="idea-meta"><span class="tag t-effort-high">High effort</span><span class="tag t-impact">High impact</span></div>
+  </div>
+
+  <div class="idea i2">
+    <div class="idea-title">Claude Code integration</div>
+    <div class="idea-desc">Embed a chat panel that talks to Claude. "Generate a pricing page" → appears on canvas instantly. The full antidraw loop.</div>
+    <div class="idea-meta"><span class="tag t-effort-med">Medium effort</span><span class="tag t-impact">High impact</span></div>
+  </div>
+
+  <div class="idea i3">
+    <div class="idea-title">Annotation layer</div>
+    <div class="idea-desc">Draw arrows, add sticky notes, and leave comments on top of HTML pages. Useful for design reviews and async feedback.</div>
+    <div class="idea-meta"><span class="tag t-effort-med">Medium effort</span><span class="tag t-scope">v2.1</span></div>
+  </div>
+
+  <div class="idea i4">
+    <div class="idea-title">Template gallery</div>
+    <div class="idea-desc">Pre-built HTML templates: dashboards, reports, specs, changelogs. One-click to add to your canvas and customize.</div>
+    <div class="idea-meta"><span class="tag t-effort-low">Low effort</span><span class="tag t-scope">v2.0</span></div>
+  </div>
+
+  <div class="idea i5">
+    <div class="idea-title">Version diffing</div>
+    <div class="idea-desc">Track changes to HTML files over time. Visual diff showing what changed between saves. Git-like history for pages.</div>
+    <div class="idea-meta"><span class="tag t-effort-high">High effort</span><span class="tag t-scope">v3.0</span></div>
+  </div>
+
+  <div class="verdict">
+    <div class="verdict-title">Recommendation</div>
+    <div class="verdict-text">Start with <strong>Template gallery</strong> (quick win, low effort) and <strong>Claude Code integration</strong> (differentiator). Save multiplayer and version diffing for v3 when the user base justifies the infrastructure.</div>
+  </div>
+</body>
+</html>

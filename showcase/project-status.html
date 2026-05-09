@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #fff; padding: 36px; max-width: 520px; }
+    h1 { font-size: 18px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+    .date { font-size: 12px; color: #999; margin-bottom: 28px; }
+    .metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 28px; }
+    .metric {
+      background: #f9fafb; border-radius: 10px; padding: 16px;
+    }
+    .metric-label { font-size: 11px; color: #999; margin-bottom: 4px; }
+    .metric-value { font-size: 24px; font-weight: 700; color: #1a1a1a; }
+    .metric-change { font-size: 11px; margin-top: 2px; }
+    .up { color: #16a34a; }
+    .down { color: #dc2626; }
+    .section-title { font-size: 13px; font-weight: 600; color: #1a1a1a; margin-bottom: 12px; }
+    .task-list { list-style: none; padding: 0; margin-bottom: 24px; }
+    .task {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 0; border-bottom: 1px solid #f3f3f3;
+      font-size: 13px; color: #333;
+    }
+    .task:last-child { border-bottom: none; }
+    .status {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .done { background: #22c55e; }
+    .progress { background: #3b82f6; }
+    .blocked { background: #ef4444; }
+    .todo { background: #d4d4d4; }
+    .task-name { flex: 1; }
+    .task-owner { font-size: 11px; color: #999; }
+    .progress-bar { height: 6px; background: #f3f3f3; border-radius: 3px; margin-bottom: 6px; overflow: hidden; }
+    .progress-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, #3b82f6, #6366f1); }
+    .progress-label { font-size: 11px; color: #999; display: flex; justify-content: space-between; }
+    .legend { display: flex; gap: 16px; margin-bottom: 24px; }
+    .legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #888; }
+  </style>
+</head>
+<body>
+  <h1>Sprint 14 Status</h1>
+  <p class="date">May 5 - May 16, 2026</p>
+
+  <div class="metric-grid">
+    <div class="metric">
+      <div class="metric-label">Velocity</div>
+      <div class="metric-value">34</div>
+      <div class="metric-change up">+12% vs avg</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Completion</div>
+      <div class="metric-value">72%</div>
+      <div class="metric-change">18/25 stories</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Blockers</div>
+      <div class="metric-value">2</div>
+      <div class="metric-change down">Needs attention</div>
+    </div>
+  </div>
+
+  <div class="progress-bar"><div class="progress-fill" style="width:72%"></div></div>
+  <div class="progress-label"><span>Sprint progress</span><span>72%</span></div>
+
+  <br>
+  <div class="legend">
+    <div class="legend-item"><div class="status done"></div> Done</div>
+    <div class="legend-item"><div class="status progress"></div> In Progress</div>
+    <div class="legend-item"><div class="status blocked"></div> Blocked</div>
+    <div class="legend-item"><div class="status todo"></div> To Do</div>
+  </div>
+
+  <div class="section-title">Key Tasks</div>
+  <ul class="task-list">
+    <li class="task"><div class="status done"></div><span class="task-name">File System Access API integration</span><span class="task-owner">AM</span></li>
+    <li class="task"><div class="status done"></div><span class="task-name">Hot reload via FileSystemObserver</span><span class="task-owner">AM</span></li>
+    <li class="task"><div class="status done"></div><span class="task-name">Folder persistence in IndexedDB</span><span class="task-owner">AM</span></li>
+    <li class="task"><div class="status done"></div><span class="task-name">Workspace switcher with search</span><span class="task-owner">AM</span></li>
+    <li class="task"><div class="status progress"></div><span class="task-name">Cloudflare Pages deployment</span><span class="task-owner">AM</span></li>
+    <li class="task"><div class="status progress"></div><span class="task-name">View source code panel</span><span class="task-owner">AM</span></li>
+    <li class="task"><div class="status blocked"></div><span class="task-name">Share flow (R2 + Workers)</span><span class="task-owner">-</span></li>
+    <li class="task"><div class="status todo"></div><span class="task-name">Sandbox subdomain isolation</span><span class="task-owner">-</span></li>
+  </ul>
+</body>
+</html>

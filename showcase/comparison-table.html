@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #fff; padding: 36px; }
+    h1 { font-size: 18px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+    .subtitle { font-size: 12px; color: #999; margin-bottom: 24px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th {
+      text-align: left; padding: 10px 14px; font-weight: 600;
+      color: #666; font-size: 11px; text-transform: uppercase;
+      letter-spacing: 0.5px; border-bottom: 2px solid #f0f0f0;
+    }
+    td { padding: 12px 14px; border-bottom: 1px solid #f5f5f5; color: #333; }
+    tr:hover td { background: #fafafa; }
+    .highlight td { background: #f0f7ff; }
+    .highlight td:first-child { font-weight: 600; color: #1d4ed8; }
+    .check { color: #22c55e; font-weight: 700; }
+    .cross { color: #d4d4d4; }
+    .partial { color: #f59e0b; }
+    .tag {
+      display: inline-block; padding: 2px 8px; border-radius: 4px;
+      font-size: 11px; font-weight: 500;
+    }
+    .tag-fast { background: #d1fae5; color: #059669; }
+    .tag-med { background: #fef3c7; color: #92400e; }
+    .tag-slow { background: #fee2e2; color: #dc2626; }
+    caption { text-align: left; font-size: 11px; color: #bbb; margin-top: 12px; caption-side: bottom; }
+  </style>
+</head>
+<body>
+  <h1>HTML vs Markdown for Agent Output</h1>
+  <p class="subtitle">Feature comparison for AI-generated documents</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Capability</th>
+        <th>HTML</th>
+        <th>Markdown</th>
+        <th>PDF</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight">
+        <td>Interactive elements</td>
+        <td><span class="check">&#10003;</span> Full</td>
+        <td><span class="cross">&#10005;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+      </tr>
+      <tr>
+        <td>Data visualizations</td>
+        <td><span class="check">&#10003;</span> Charts, graphs</td>
+        <td><span class="partial">~</span> ASCII only</td>
+        <td><span class="check">&#10003;</span> Static</td>
+      </tr>
+      <tr class="highlight">
+        <td>Syntax highlighting</td>
+        <td><span class="check">&#10003;</span> Any language</td>
+        <td><span class="check">&#10003;</span> With renderer</td>
+        <td><span class="check">&#10003;</span> Static</td>
+      </tr>
+      <tr>
+        <td>Layout control</td>
+        <td><span class="check">&#10003;</span> CSS Grid/Flex</td>
+        <td><span class="cross">&#10005;</span> Linear</td>
+        <td><span class="check">&#10003;</span></td>
+      </tr>
+      <tr class="highlight">
+        <td>Color & branding</td>
+        <td><span class="check">&#10003;</span> Full CSS</td>
+        <td><span class="cross">&#10005;</span></td>
+        <td><span class="check">&#10003;</span></td>
+      </tr>
+      <tr>
+        <td>Easy to edit</td>
+        <td><span class="check">&#10003;</span></td>
+        <td><span class="check">&#10003;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+      </tr>
+      <tr>
+        <td>Agent can generate</td>
+        <td><span class="check">&#10003;</span></td>
+        <td><span class="check">&#10003;</span></td>
+        <td><span class="partial">~</span> Difficult</td>
+      </tr>
+      <tr>
+        <td>File size</td>
+        <td><span class="tag tag-fast">Small</span></td>
+        <td><span class="tag tag-fast">Tiny</span></td>
+        <td><span class="tag tag-med">Medium</span></td>
+      </tr>
+      <tr>
+        <td>Shareable</td>
+        <td><span class="check">&#10003;</span> URL</td>
+        <td><span class="partial">~</span> Needs renderer</td>
+        <td><span class="check">&#10003;</span> File</td>
+      </tr>
+    </tbody>
+    <caption>Inspired by @trq212's "The Unreasonable Effectiveness of HTML"</caption>
+  </table>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #0a0a0a;
+      overflow: hidden;
+    }
+    .container { text-align: center; }
+    .logo {
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      color: white;
+      margin-bottom: 32px;
+    }
+    .logo span { opacity: 0.3; }
+    .meanings {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .meaning {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 24px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      transition: all 0.2s;
+      cursor: default;
+    }
+    .meaning:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.1);
+      transform: translateX(4px);
+    }
+    .emoji { font-size: 24px; width: 36px; text-align: center; }
+    .text { text-align: left; }
+    .expansion {
+      font-size: 14px;
+      font-weight: 600;
+      color: #e2e8f0;
+    }
+    .expansion em {
+      font-style: normal;
+      background: linear-gradient(135deg, #667eea, #f093fb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .desc {
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+    .punchline {
+      font-size: 15px;
+      font-weight: 600;
+      color: #94a3b8;
+      letter-spacing: 0.5px;
+    }
+    .punchline em {
+      font-style: normal;
+      color: white;
+    }
+    .domain {
+      margin-top: 24px;
+      font-size: 13px;
+      color: #334155;
+      font-family: 'SF Mono', monospace;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">html<span>.</span>can</div>
+
+    <div class="meanings">
+      <div class="meaning">
+        <div class="emoji">🖼️</div>
+        <div class="text">
+          <div class="expansion">HTML <em>Canvas</em></div>
+          <div class="desc">A canvas for viewing HTML files side by side</div>
+        </div>
+      </div>
+      <div class="meaning">
+        <div class="emoji">🗑️</div>
+        <div class="text">
+          <div class="expansion">HTML <em>Can</em></div>
+          <div class="desc">Toss your HTML files in, we'll display them</div>
+        </div>
+      </div>
+      <div class="meaning">
+        <div class="emoji">💪</div>
+        <div class="text">
+          <div class="expansion">HTML fucking <em>CAN</em>, bro</div>
+          <div class="desc">HTML can do things markdown only dreams about</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="punchline"><em>Goated</em> domain.</div>
+    <div class="domain">htmlcan.com</div>
+  </div>
+</body>
+</html>

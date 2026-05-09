@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fafafa; padding: 40px; }
+    h1 { font-size: 18px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+    .subtitle { font-size: 12px; color: #999; margin-bottom: 32px; }
+    .diagram { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .row { display: flex; gap: 20px; align-items: center; }
+    .box {
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 500;
+      text-align: center;
+      min-width: 120px;
+      position: relative;
+    }
+    .client { background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; }
+    .api { background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; }
+    .service { background: #fef3c7; border: 1px solid #fde68a; color: #92400e; }
+    .db { background: #fce7f3; border: 1px solid #fbcfe8; color: #9d174d; }
+    .cache { background: #ede9fe; border: 1px solid #ddd6fe; color: #5b21b6; }
+    .arrow {
+      width: 2px; height: 24px; background: #d4d4d4; position: relative;
+    }
+    .arrow::after {
+      content: ''; position: absolute; bottom: -4px; left: -3px;
+      border-left: 4px solid transparent; border-right: 4px solid transparent;
+      border-top: 6px solid #d4d4d4;
+    }
+    .harrow { width: 24px; height: 2px; background: #d4d4d4; position: relative; }
+    .harrow::after {
+      content: ''; position: absolute; right: -4px; top: -3px;
+      border-top: 4px solid transparent; border-bottom: 4px solid transparent;
+      border-left: 6px solid #d4d4d4;
+    }
+    .label {
+      font-size: 10px; color: #999; position: absolute; left: 50%; transform: translateX(-50%);
+      white-space: nowrap;
+    }
+    .section-label {
+      font-size: 10px; font-weight: 600; color: #aaa; text-transform: uppercase;
+      letter-spacing: 1.5px; margin-top: 8px;
+    }
+    .box-sm { font-size: 11px; padding: 8px 16px; min-width: 90px; }
+  </style>
+</head>
+<body>
+  <h1>System Architecture</h1>
+  <p class="subtitle">htmlcan deployment topology</p>
+  <div class="diagram">
+    <div class="section-label">Client Layer</div>
+    <div class="row">
+      <div class="box client">React SPA<br><span style="font-size:10px;opacity:0.7">htmlcan.com</span></div>
+    </div>
+    <div class="arrow"></div>
+    <div class="section-label">Edge Layer</div>
+    <div class="row">
+      <div class="box api">Cloudflare Pages<br><span style="font-size:10px;opacity:0.7">Static Assets</span></div>
+      <div class="harrow"></div>
+      <div class="box api">Workers API<br><span style="font-size:10px;opacity:0.7">api.htmlcan.com</span></div>
+    </div>
+    <div class="arrow"></div>
+    <div class="section-label">Service Layer</div>
+    <div class="row">
+      <div class="box service box-sm">Auth</div>
+      <div class="box service box-sm">Share</div>
+      <div class="box service box-sm">Sandbox</div>
+    </div>
+    <div class="arrow"></div>
+    <div class="section-label">Storage Layer</div>
+    <div class="row">
+      <div class="box db box-sm">D1<br><span style="font-size:9px;opacity:0.7">Users</span></div>
+      <div class="box cache box-sm">R2<br><span style="font-size:9px;opacity:0.7">Pages</span></div>
+      <div class="box cache box-sm">KV<br><span style="font-size:9px;opacity:0.7">Sessions</span></div>
+    </div>
+  </div>
+</body>
+</html>

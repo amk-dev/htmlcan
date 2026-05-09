@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #0a0a0a;
+    }
+    .card {
+      text-align: center;
+      max-width: 360px;
+      padding: 48px 40px;
+    }
+    .time {
+      font-size: 64px;
+      font-weight: 800;
+      letter-spacing: -3px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    p {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .stack {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .chip {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.06);
+      color: #94a3b8;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .credit {
+      margin-top: 32px;
+      font-size: 11px;
+      color: #334155;
+    }
+    .credit a { color: #667eea; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="time">2 hrs</div>
+    <h1>We built this in two hours.</h1>
+    <p>A canvas for viewing HTML files — with hot reload, folder persistence, workspace switching, and Cloudflare deployment. All from a single Claude Code session.</p>
+    <div class="stack">
+      <span class="chip">React Flow</span>
+      <span class="chip">File System Access API</span>
+      <span class="chip">FileSystemObserver</span>
+      <span class="chip">IndexedDB</span>
+      <span class="chip">Cloudflare Pages</span>
+    </div>
+    <div class="credit">
+      Inspired by <a href="https://x.com/trq212/status/2052809885763747935">@trq212</a>'s "The Unreasonable Effectiveness of HTML"
+    </div>
+  </div>
+</body>
+</html>

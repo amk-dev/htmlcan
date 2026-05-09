@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #0f172a; color: #e2e8f0; padding: 28px; }
+    h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .subtitle { font-size: 11px; color: #64748b; margin-bottom: 24px; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+    .stat-card {
+      background: #1e293b; border-radius: 10px; padding: 16px;
+      border: 1px solid #334155;
+    }
+    .stat-label { font-size: 11px; color: #64748b; margin-bottom: 6px; }
+    .stat-value { font-size: 22px; font-weight: 700; }
+    .stat-delta { font-size: 11px; margin-top: 4px; }
+    .green { color: #4ade80; }
+    .red { color: #f87171; }
+    .chart-card {
+      background: #1e293b; border-radius: 10px; padding: 20px;
+      border: 1px solid #334155; margin-bottom: 16px;
+    }
+    .chart-title { font-size: 13px; font-weight: 500; margin-bottom: 16px; }
+    .chart {
+      display: flex; align-items: flex-end; gap: 6px; height: 120px;
+      padding-top: 8px;
+    }
+    .bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .bar {
+      width: 100%; border-radius: 3px 3px 0 0;
+      transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .bar-primary { background: linear-gradient(180deg, #818cf8, #6366f1); }
+    .bar-secondary { background: #334155; }
+    .bar-label { font-size: 9px; color: #475569; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .list-card {
+      background: #1e293b; border-radius: 10px; padding: 16px;
+      border: 1px solid #334155;
+    }
+    .list-title { font-size: 12px; font-weight: 500; margin-bottom: 12px; color: #94a3b8; }
+    .list-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 8px 0; border-bottom: 1px solid #1e293b;
+      font-size: 12px;
+    }
+    .list-item:last-child { border-bottom: none; }
+    .list-name { color: #cbd5e1; }
+    .list-value { font-weight: 600; font-variant-numeric: tabular-nums; }
+    .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Analytics Overview</h1>
+  <p class="subtitle">Last 7 days &middot; Updated 2 min ago</p>
+
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-label">Page Views</div>
+      <div class="stat-value">24.8K</div>
+      <div class="stat-delta green">+18.2%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Visitors</div>
+      <div class="stat-value">8,492</div>
+      <div class="stat-delta green">+12.4%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Bounce Rate</div>
+      <div class="stat-value">34.2%</div>
+      <div class="stat-delta green">-3.1%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Avg Duration</div>
+      <div class="stat-value">2:34</div>
+      <div class="stat-delta red">-8s</div>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <div class="chart-title">Daily Traffic</div>
+    <div class="chart" id="chart"></div>
+  </div>
+
+  <div class="row">
+    <div class="list-card">
+      <div class="list-title">Top Pages</div>
+      <div class="list-item"><span class="list-name">/</span><span class="list-value">8,234</span></div>
+      <div class="list-item"><span class="list-name">/docs</span><span class="list-value">3,891</span></div>
+      <div class="list-item"><span class="list-name">/pricing</span><span class="list-value">2,104</span></div>
+      <div class="list-item"><span class="list-name">/blog</span><span class="list-value">1,847</span></div>
+    </div>
+    <div class="list-card">
+      <div class="list-title">Traffic Sources</div>
+      <div class="list-item"><span class="list-name"><span class="dot" style="background:#818cf8"></span>Direct</span><span class="list-value">42%</span></div>
+      <div class="list-item"><span class="list-name"><span class="dot" style="background:#4ade80"></span>Organic</span><span class="list-value">31%</span></div>
+      <div class="list-item"><span class="list-name"><span class="dot" style="background:#fbbf24"></span>Social</span><span class="list-value">18%</span></div>
+      <div class="list-item"><span class="list-name"><span class="dot" style="background:#f87171"></span>Referral</span><span class="list-value">9%</span></div>
+    </div>
+  </div>
+
+  <script>
+    const data = [65, 42, 78, 55, 89, 72, 95];
+    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    const chart = document.getElementById('chart');
+    days.forEach((d, i) => {
+      const g = document.createElement('div');
+      g.className = 'bar-group';
+      g.innerHTML = `<div class="bar bar-primary" style="height:0%"></div><div class="bar-label">${d}</div>`;
+      chart.appendChild(g);
+    });
+    setTimeout(() => {
+      document.querySelectorAll('.bar-primary').forEach((b, i) => { b.style.height = data[i] + '%'; });
+    }, 100);
+  </script>
+</body>
+</html>

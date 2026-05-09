@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #fff; padding: 36px; max-width: 480px; }
+    h1 { font-size: 18px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+    .subtitle { font-size: 12px; color: #999; margin-bottom: 28px; }
+    .section { margin-bottom: 28px; }
+    .section-title { font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    .color-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+    .color-swatch {
+      aspect-ratio: 1; border-radius: 10px; position: relative;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+    }
+    .color-info { text-align: center; margin-top: 6px; }
+    .color-name { font-size: 10px; color: #666; font-weight: 500; }
+    .color-hex { font-size: 9px; color: #aaa; font-family: 'SF Mono', monospace; }
+    .type-row {
+      display: flex; align-items: baseline; justify-content: space-between;
+      padding: 12px 0; border-bottom: 1px solid #f3f3f3;
+    }
+    .type-sample { color: #1a1a1a; }
+    .type-meta { font-size: 11px; color: #999; font-family: 'SF Mono', monospace; }
+    .spacing-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .spacing-bar { height: 24px; background: #eff6ff; border-radius: 4px; border: 1px solid #bfdbfe; }
+    .spacing-label { font-size: 11px; color: #666; min-width: 30px; font-family: 'SF Mono', monospace; }
+    .spacing-value { font-size: 11px; color: #aaa; font-family: 'SF Mono', monospace; }
+    .radius-grid { display: flex; gap: 12px; }
+    .radius-item { text-align: center; }
+    .radius-box {
+      width: 48px; height: 48px; background: #f3f4f6; border: 1px solid #e5e7eb;
+      margin-bottom: 6px;
+    }
+    .radius-label { font-size: 10px; color: #888; font-family: 'SF Mono', monospace; }
+  </style>
+</head>
+<body>
+  <h1>Design Tokens</h1>
+  <p class="subtitle">Generated from Figma &middot; v2.4.0</p>
+
+  <div class="section">
+    <div class="section-title">Colors &middot; Primary</div>
+    <div class="color-grid">
+      <div><div class="color-swatch" style="background:#eff6ff"></div><div class="color-info"><div class="color-name">50</div><div class="color-hex">#eff6ff</div></div></div>
+      <div><div class="color-swatch" style="background:#93c5fd"></div><div class="color-info"><div class="color-name">300</div><div class="color-hex">#93c5fd</div></div></div>
+      <div><div class="color-swatch" style="background:#3b82f6"></div><div class="color-info"><div class="color-name">500</div><div class="color-hex">#3b82f6</div></div></div>
+      <div><div class="color-swatch" style="background:#1d4ed8"></div><div class="color-info"><div class="color-name">700</div><div class="color-hex">#1d4ed8</div></div></div>
+      <div><div class="color-swatch" style="background:#1e3a5f"></div><div class="color-info"><div class="color-name">900</div><div class="color-hex">#1e3a5f</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Typography</div>
+    <div class="type-row"><span class="type-sample" style="font-size:28px;font-weight:700">Heading 1</span><span class="type-meta">28/34 &middot; Bold</span></div>
+    <div class="type-row"><span class="type-sample" style="font-size:20px;font-weight:600">Heading 2</span><span class="type-meta">20/28 &middot; Semi</span></div>
+    <div class="type-row"><span class="type-sample" style="font-size:14px;font-weight:400">Body</span><span class="type-meta">14/22 &middot; Regular</span></div>
+    <div class="type-row"><span class="type-sample" style="font-size:12px;font-weight:500;color:#666">Caption</span><span class="type-meta">12/16 &middot; Medium</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Spacing</div>
+    <div class="spacing-row"><span class="spacing-label">4</span><div class="spacing-bar" style="width:16px"></div><span class="spacing-value">4px</span></div>
+    <div class="spacing-row"><span class="spacing-label">8</span><div class="spacing-bar" style="width:32px"></div><span class="spacing-value">8px</span></div>
+    <div class="spacing-row"><span class="spacing-label">16</span><div class="spacing-bar" style="width:64px"></div><span class="spacing-value">16px</span></div>
+    <div class="spacing-row"><span class="spacing-label">24</span><div class="spacing-bar" style="width:96px"></div><span class="spacing-value">24px</span></div>
+    <div class="spacing-row"><span class="spacing-label">32</span><div class="spacing-bar" style="width:128px"></div><span class="spacing-value">32px</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Border Radius</div>
+    <div class="radius-grid">
+      <div class="radius-item"><div class="radius-box" style="border-radius:2px"></div><div class="radius-label">2px</div></div>
+      <div class="radius-item"><div class="radius-box" style="border-radius:6px"></div><div class="radius-label">6px</div></div>
+      <div class="radius-item"><div class="radius-box" style="border-radius:10px"></div><div class="radius-label">10px</div></div>
+      <div class="radius-item"><div class="radius-box" style="border-radius:16px"></div><div class="radius-label">16px</div></div>
+      <div class="radius-item"><div class="radius-box" style="border-radius:9999px"></div><div class="radius-label">full</div></div>
+    </div>
+  </div>
+</body>
+</html>
