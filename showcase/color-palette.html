@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #fff; padding: 36px; max-width: 520px; }
+    h1 { font-size: 18px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+    .subtitle { font-size: 12px; color: #999; margin-bottom: 28px; }
+    .palette { display: flex; gap: 12px; margin-bottom: 24px; }
+    .swatch {
+      flex: 1; aspect-ratio: 1; border-radius: 14px;
+      display: flex; align-items: flex-end; justify-content: center;
+      padding-bottom: 10px; font-size: 10px; font-weight: 600;
+      color: rgba(255,255,255,0.9); text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    }
+    .swatch:hover { transform: scale(1.06); }
+    .palette-name { font-size: 13px; font-weight: 600; color: #1a1a1a; margin-bottom: 14px; }
+    .palette-section { margin-bottom: 28px; }
+    .color-row {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 0; border-bottom: 1px solid #f3f3f3;
+      font-size: 12px; color: #555;
+    }
+    .color-row:last-child { border-bottom: none; }
+    .color-dot {
+      width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0;
+    }
+    .color-name { flex: 1; font-weight: 500; color: #1a1a1a; }
+    .color-hex { font-family: 'SF Mono', Menlo, monospace; font-size: 11px; color: #999; }
+  </style>
+</head>
+<body>
+  <h1>Color Palette</h1>
+  <p class="subtitle">Sunset Collection — 5 curated palettes</p>
+
+  <div class="palette">
+    <div class="swatch" style="background: #FF6B6B;">#FF6B6B</div>
+    <div class="swatch" style="background: #FFA07A;">#FFA07A</div>
+    <div class="swatch" style="background: #FFD93D;">#FFD93D</div>
+    <div class="swatch" style="background: #6BCB77;">#6BCB77</div>
+    <div class="swatch" style="background: #4D96FF;">#4D96FF</div>
+  </div>
+
+  <div class="palette-section">
+    <div class="palette-name">Warm Tones</div>
+    <div class="color-row">
+      <div class="color-dot" style="background: #FF6B6B;"></div>
+      <span class="color-name">Coral Red</span>
+      <span class="color-hex">#FF6B6B</span>
+    </div>
+    <div class="color-row">
+      <div class="color-dot" style="background: #FFA07A;"></div>
+      <span class="color-name">Light Salmon</span>
+      <span class="color-hex">#FFA07A</span>
+    </div>
+    <div class="color-row">
+      <div class="color-dot" style="background: #FFD93D;"></div>
+      <span class="color-name">Sunflower</span>
+      <span class="color-hex">#FFD93D</span>
+    </div>
+  </div>
+
+  <div class="palette-section">
+    <div class="palette-name">Cool Tones</div>
+    <div class="color-row">
+      <div class="color-dot" style="background: #6BCB77;"></div>
+      <span class="color-name">Mint Green</span>
+      <span class="color-hex">#6BCB77</span>
+    </div>
+    <div class="color-row">
+      <div class="color-dot" style="background: #4D96FF;"></div>
+      <span class="color-name">Sky Blue</span>
+      <span class="color-hex">#4D96FF</span>
+    </div>
+    <div class="color-row">
+      <div class="color-dot" style="background: #9B59B6;"></div>
+      <span class="color-name">Amethyst</span>
+      <span class="color-hex">#9B59B6</span>
+    </div>
+  </div>
+
+  <div class="palette" style="border-radius: 14px; overflow: hidden; gap: 0;">
+    <div class="swatch" style="background: #2C3E50; border-radius: 0;">#2C3E50</div>
+    <div class="swatch" style="background: #E74C3C; border-radius: 0;">#E74C3C</div>
+    <div class="swatch" style="background: #F39C12; border-radius: 0;">#F39C12</div>
+    <div class="swatch" style="background: #27AE60; border-radius: 0;">#27AE60</div>
+    <div class="swatch" style="background: #3498DB; border-radius: 0;">#3498DB</div>
+  </div>
+</body>
+</html>
