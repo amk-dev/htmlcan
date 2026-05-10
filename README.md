@@ -11,6 +11,10 @@ Open a folder. See every page. Edit — it updates live.
 
 </div>
 
+<p align="center">
+  <img src="hero.png" alt="htmlcan — multiple HTML files on an infinite canvas" width="100%" />
+</p>
+
 ---
 
 HTML can do things markdown only dreams about — dashboards, interactive components, rich layouts, data visualizations. But previewing them means opening 15 tabs and alt-tabbing between files.
