@@ -7,7 +7,7 @@
 An infinite canvas for your HTML files.  
 Open a folder. See every page. Edit anywhere — it updates live.
 
-[Website](https://htmlcan.com) &nbsp;&middot;&nbsp; [GitHub](https://github.com/amk-dev/htmlcan) &nbsp;&middot;&nbsp; [npm](https://www.npmjs.com/package/htmlcan)
+[Website](https://htmlcan.com) &nbsp;&middot;&nbsp; [GitHub](https://github.com/amk-dev/htmlcan)
 
 </div>
 
@@ -26,24 +26,7 @@ HTML can do things markdown only dreams about — dashboards, interactive compon
 
 ## Quick Start
 
-```bash
-npx htmlcan
-```
-
-That's it. This creates a `pages/` folder, starts the viewer, and opens your browser.
-
-Point it at an existing folder:
-
-```bash
-npx htmlcan -f ./my-html-files
-```
-
-Or install it:
-
-```bash
-npm install -g htmlcan
-htmlcan --folder ./prototypes --port 4000
-```
+Head to [htmlcan.com](https://htmlcan.com), open a folder containing your HTML files, and you're on the canvas.
 
 > **Note:** htmlcan requires a Chromium-based browser (Chrome, Edge, Arc, Brave) for the File System Access API.
 
@@ -93,10 +76,6 @@ htmlcan --folder ./prototypes --port 4000
 - Switch between folders from the sidebar
 - Recent folders remembered across sessions
 - Sidebar with page list — click to focus & zoom
-
-**CLI**
-- `--folder, -f` — path to your HTML folder (default: `./pages`)
-- `--port, -p` — dev server port (default: auto)
 
 ## The AI Workflow
 
