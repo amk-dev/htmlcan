@@ -1,4 +1,4 @@
-import { FileText } from "lucide-react";
+import { FileText, MessageSquare } from "lucide-react";
 import { useCanvasStore } from "@/lib/store";
 import { FolderSwitcher } from "@/components/FolderSwitcher";
 import type { PageEntry, FolderEntry } from "@/lib/use-folder";
@@ -50,6 +50,18 @@ export const PagePanel = ({
             </button>
           ))
         )}
+      </div>
+
+      <div className="p-2 border-t border-[#2d2d2d]">
+        <a
+          href="https://x.com/buriedstupidity"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full flex items-center gap-2 py-2 px-2.5 rounded-md text-left no-underline hover:bg-white/[0.06]"
+        >
+          <MessageSquare className="w-3.5 h-3.5 text-neutral-500 shrink-0" />
+          <span className="text-[13px] text-neutral-400">Send feedback</span>
+        </a>
       </div>
     </div>
   );
